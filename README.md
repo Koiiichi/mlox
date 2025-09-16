@@ -11,7 +11,45 @@ MLOX is a C implementation of the Lox scripting language from *Crafting Interpre
 - Interactive REPL and ability to run scripts from disk
 - Comprehensive Doxygen documentation for all runtime modules
 
+## Prerequisites
+
+### Windows Users
+
+If you're on Windows, you'll need to install development tools before building:
+
+1. **Install Windows Package Manager tools**:
+   ```powershell
+   # Install make
+   winget install GnuWin32.Make
+   
+   # Install MSYS2 for gcc and development tools
+   winget install MSYS2.MSYS2
+   ```
+
+2. **Set up MSYS2**:
+   - Open "MSYS2 MSYS" from your Start menu
+   - Install gcc and make:
+     ```bash
+     pacman -S gcc make
+     ```
+
+3. **Add tools to PATH** (if using PowerShell/Git Bash):
+   ```powershell
+   # Add GnuWin32 make to PATH
+   [Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";C:\Program Files (x86)\GnuWin32\bin", [EnvironmentVariableTarget]::User)
+   ```
+
+**Recommended**: Use the MSYS2 terminal for building and testing, as it provides a complete Unix-like development environment.
+
+### Linux/macOS Users
+
+Ensure you have `gcc` and `make` installed:
+- **Ubuntu/Debian**: `sudo apt install build-essential`
+- **macOS**: Install Xcode Command Line Tools: `xcode-select --install`
+
 ## Building
+
+**Windows users**: Use MSYS2 terminal or ensure development tools are in your PATH (see Prerequisites above).
 
 ```bash
 make

@@ -24,6 +24,9 @@ If you're on Windows, you'll need to install development tools before building:
    
    # Install MSYS2 for gcc and development tools
    winget install MSYS2.MSYS2
+   
+   # Install Doxygen for documentation generation (optional)
+   winget install DimitriVanHeesch.Doxygen
    ```
 
 2. **Set up MSYS2**:
@@ -40,6 +43,9 @@ If you're on Windows, you'll need to install development tools before building:
    
    # Add MSYS2 tools to PATH
    [Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";C:\msys64\usr\bin", [EnvironmentVariableTarget]::User)
+   
+   # Add Doxygen to PATH (if installed)
+   [Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";C:\Program Files\doxygen\bin", [EnvironmentVariableTarget]::User)
    ```
 
    **Note**: Restart your terminal after setting PATH variables.
@@ -93,6 +99,17 @@ The codebase is documented with Doxygen. Generate the HTML documentation into `d
 ```bash
 make docs
 ```
+
+**Viewing Documentation:**
+- **Main page**: Open `docs/html/index.html` in your web browser
+- **Windows users**: The documentation should open automatically in your default browser after generation
+- **Manual access**: Navigate to `docs/html/index.html` and double-click to open
+
+The documentation includes:
+- API reference for all functions and data structures
+- Source code cross-references
+- Module dependency graphs
+- Detailed explanations of the virtual machine architecture
 
 ## Project Layout
 

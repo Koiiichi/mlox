@@ -1,0 +1,27 @@
+var annotated_dup =
+[
+    [ "CallFrame", "struct_call_frame.html", "struct_call_frame" ],
+    [ "Chunk", "struct_chunk.html", "struct_chunk" ],
+    [ "ClassCompiler", "struct_class_compiler.html", "struct_class_compiler" ],
+    [ "Compiler", "struct_compiler.html", "struct_compiler" ],
+    [ "Entry", "struct_entry.html", "struct_entry" ],
+    [ "Local", "struct_local.html", "struct_local" ],
+    [ "Obj", "struct_obj.html", "struct_obj" ],
+    [ "ObjBoundMethod", "struct_obj_bound_method.html", "struct_obj_bound_method" ],
+    [ "ObjClass", "struct_obj_class.html", "struct_obj_class" ],
+    [ "ObjClosure", "struct_obj_closure.html", "struct_obj_closure" ],
+    [ "ObjFunction", "struct_obj_function.html", "struct_obj_function" ],
+    [ "ObjInstance", "struct_obj_instance.html", "struct_obj_instance" ],
+    [ "ObjNative", "struct_obj_native.html", "struct_obj_native" ],
+    [ "ObjString", "struct_obj_string.html", "struct_obj_string" ],
+    [ "ObjUpvalue", "struct_obj_upvalue.html", "struct_obj_upvalue" ],
+    [ "Parser", "struct_parser.html", "struct_parser" ],
+    [ "ParseRule", "struct_parse_rule.html", "struct_parse_rule" ],
+    [ "Scanner", "struct_scanner.html", "struct_scanner" ],
+    [ "Table", "struct_table.html", "struct_table" ],
+    [ "Token", "struct_token.html", "struct_token" ],
+    [ "Upvalue", "struct_upvalue.html", "struct_upvalue" ],
+    [ "Value", "struct_value.html", "struct_value" ],
+    [ "ValueArray", "struct_value_array.html", "struct_value_array" ],
+    [ "VM", "struct_v_m.html", "struct_v_m" ]
+];

@@ -33,7 +33,7 @@ test: $(BIN) $(TEST_SCRIPTS)
 	@set -e; \
 	for script in $(TEST_SCRIPTS); do \
 	echo "Running $$script"; \
-	./$(BIN) $$script > $$script.out && diff -u $${script}.expected $$script.out; \
+	./$(BIN) $$script > $$script.out && diff -u --strip-trailing-cr $${script}.expected $$script.out; \
 	rm -f $$script.out; \
 	done
 

@@ -28,16 +28,21 @@ If you're on Windows, you'll need to install development tools before building:
 
 2. **Set up MSYS2**:
    - Open "MSYS2 MSYS" from your Start menu
-   - Install gcc and make:
+   - Install gcc, make, and diff utilities:
      ```bash
-     pacman -S gcc make
+     pacman -S gcc make diffutils
      ```
 
-3. **Add tools to PATH** (if using PowerShell/Git Bash):
+3. **Add tools to PATH** (for PowerShell/Git Bash usage):
    ```powershell
    # Add GnuWin32 make to PATH
    [Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";C:\Program Files (x86)\GnuWin32\bin", [EnvironmentVariableTarget]::User)
+   
+   # Add MSYS2 tools to PATH
+   [Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";C:\msys64\usr\bin", [EnvironmentVariableTarget]::User)
    ```
+
+   **Note**: Restart your terminal after setting PATH variables.
 
 **Recommended**: Use the MSYS2 terminal for building and testing, as it provides a complete Unix-like development environment.
 
@@ -100,6 +105,33 @@ mlox/
 ├── tests/            # Regression test scripts and expected outputs
 └── LICENSE
 ```
+
+## Troubleshooting
+
+### Windows Common Issues
+
+**"make: command not found"**
+- Ensure you've installed GnuWin32.Make: `winget install GnuWin32.Make`
+- Add make to PATH or restart your terminal after installation
+
+**"gcc: command not found"**
+- Ensure you've installed MSYS2 and gcc: `pacman -S gcc` in MSYS2 terminal
+- Add MSYS2 to PATH: `$env:PATH += ";C:\msys64\usr\bin"` (temporary) or use the permanent PATH setup above
+
+**"diff: command not found" during tests**
+- Install diffutils in MSYS2: `pacman -S diffutils`
+- Ensure MSYS2 usr/bin is in your PATH
+
+**Test failures with line ending differences**
+- This is handled automatically by the Makefile's `--strip-trailing-cr` option
+- If issues persist, use MSYS2 terminal instead of PowerShell/Git Bash
+
+### General Issues
+
+**Build fails with missing headers**
+- Ensure you have a complete C development environment installed
+- On Linux: `sudo apt install build-essential`
+- On macOS: `xcode-select --install`
 
 ## License
 

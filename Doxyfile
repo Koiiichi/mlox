@@ -1,0 +1,13 @@
+PROJECT_NAME           = "MLOX"
+OUTPUT_DIRECTORY       = docs
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+INPUT                  = src include
+FILE_PATTERNS          = *.c *.h
+RECURSIVE              = YES
+EXTRACT_ALL            = YES
+FULL_PATH_NAMES        = NO
+HAVE_DOT               = NO
+JAVADOC_AUTOBRIEF      = YES
+WARN_AS_ERROR          = NO
+QUIET                  = YES

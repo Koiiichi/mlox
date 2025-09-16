@@ -1,0 +1,42 @@
+print "Hello, MLOX!";
+var a = 1;
+var b = 2;
+print a + b;
+
+fun fib(n) {
+  if (n <= 1) return n;
+  return fib(n - 1) + fib(n - 2);
+}
+print fib(5);
+
+class Counter {
+  init(start) {
+    this.value = start;
+  }
+
+  inc() {
+    this.value = this.value + 1;
+    return this.value;
+  }
+}
+
+var counter = Counter(10);
+print counter.inc();
+print counter.inc();
+
+fun makeAdder(delta) {
+  fun add(x) {
+    return x + delta;
+  }
+  return add;
+}
+var addThree = makeAdder(3);
+print addThree(7);
+
+var sum = 0;
+var i = 0;
+while (i < 4) {
+  sum = sum + i;
+  i = i + 1;
+}
+print sum;

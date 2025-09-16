@@ -1,33 +1,68 @@
 # MLOX
 
-**MLOX** is a C-based scripting language inspired by [LOX](https://craftinginterpreters.com/), but significantly augmented with additional language features and runtime capabilities. It is designed to be expressive, minimal, and extensible—ideal for learning language design or experimenting with modern scripting constructs.
+MLOX is a C implementation of the Lox scripting language from *Crafting Interpreters*, complete with a bytecode compiler, garbage-collected virtual machine, and interactive REPL. The project mirrors the behaviour of the book's `clox` interpreter while laying the groundwork for future language extensions.
 
----
+## Features
 
-## Overview
+- Bytecode-based virtual machine with dynamic typing and garbage collection
+- Scanner, Pratt parser, and compiler for the full Lox language
+- First-class functions, closures, classes, inheritance, and bound methods
+- Native `clock()` function exposed to user code
+- Interactive REPL and ability to run scripts from disk
+- Comprehensive Doxygen documentation for all runtime modules
 
-While LOX serves as a clean, minimal baseline interpreter, MLOX expands its capabilities in several directions:
+## Building
 
-- **Ternary (`? :`) and extended operators**: including bitwise, shift, and modulo.
-- **Full object-oriented model**: even primitive types are first-class objects with methods.
-- **Modern control structures**: such as `while`, and `for-in`/`foreach` loops.
-- **Native string manipulation**: slicing, searching, and concatenation.
-- **Math library**: including trigonometric functions.
-- **File I/O and user input**: read from files or prompt interactively.
-- **Networking support**: sockets and basic TCP/UDP abstractions (planned).
+```bash
+make
+```
 
----
+The interpreter binary (`mlox`) is produced in the repository root. Compilation uses `gcc` with `-std=c99`, `-Wall`, and `-Wextra` by default.
 
-## Example
+## Running
 
-```mlox
-fn greet(name) {
-  print "Hello, " + name + "!";
-}
+To enter the interactive REPL:
 
-for (person in ["Alice", "Bob", "Charlie"]) {
-  greet(person);
-}
+```bash
+./mlox
+```
 
-var angle = 3.14159 / 2;
-print "sin(π/2) = " + sin(angle);
+To run a script file:
+
+```bash
+./mlox path/to/script.mlox
+```
+
+## Tests
+
+A lightweight regression test suite lives in `tests/`. Execute all scripts and verify their expected output using:
+
+```bash
+make test
+```
+
+Each test script has a matching `.expected` file whose contents are diffed against the interpreter's output.
+
+## Documentation
+
+The codebase is documented with Doxygen. Generate the HTML documentation into `docs/html` via:
+
+```bash
+make docs
+```
+
+## Project Layout
+
+```
+mlox/
+├── Makefile          # Build, test, and documentation targets
+├── README.md         # Project overview and usage
+├── docs/             # Doxygen output directory (generated)
+├── src/              # Interpreter source files
+├── tests/            # Regression test scripts and expected outputs
+└── LICENSE
+```
+
+## License
+
+This project is distributed under the MIT License. See `LICENSE` for details.
